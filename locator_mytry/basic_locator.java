@@ -29,7 +29,7 @@ public class basic_locator {
         num2.sendKeys("sal sal");
         
         Thread.sleep(2000);
-        
+        //<----------------------------------------------------->
         //---> find the value with css selector 
         //--> the are three types id , name ,class 
         
@@ -42,10 +42,46 @@ public class basic_locator {
         
         driver.findElement(By.cssSelector("[class='button-1 search-box-button']")).click();
         
-        //--->
+        //---> find the element with name in css selector 
 		driver.findElement(By.cssSelector("[name='q']")).sendKeys("phone");
 		
+		//<-------------------------------------------------------------------------->
+		//----> finding the element with xpath href with indexing 
+		driver.findElement(By.xpath("(//a[@href='/books'])[3]")).click();
 		
+	   //-----> finding the element with traves in the element one by one 
+       driver.findElement(By.xpath("(//a[@href='/books'])[3]/../../..//a[@href='/jewelry']")).click();
+       
+       //<--------------------------------------------------------------------------->
+		
+       //find element with link text method
+       driver.findElement(By.linkText("Black & White Diamond Heart")).click();
+       
+	
+       //<-------------------------------------------------------------------------->
+	
+       //---------> login script for web demo shop with By.xpath 
+       
+       driver.findElement(By.linkText("Log in")).click();
+       
+       //----------> sending the data to email id filled by using by.xpath
+       
+       driver.findElement(By.xpath("//input[@class='email']")).sendKeys("007sam12345@gmail.com");
+       
+       //----------> sending data with class selector 
+     driver.findElement(By.xpath("//input[@name='Password']")).sendKeys("123456789"); 
+          	   
+       //------> click the web element with class name method 
+       
+       driver.findElement(By.xpath("(//input[@type='submit'])[2]")).click();
+       
+       //<-------------------------------------------------------------------------------------->
+       
+       
+       
+       
+       
 	}
+	
 
 }
